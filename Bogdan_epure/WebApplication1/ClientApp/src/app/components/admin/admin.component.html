@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row" *ngFor="let user of usersList">
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          {{user.name }}
+        </span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          {{user.role }}
+        </span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          <button mat-raised-button color="accent" (click)="deletePatient(user.name, user.id)">Delete</button>
+          <button mat-raised-button color="primary" (click)="editPatient(user.id)">Edit</button>
+          <button mat-raised-button color="accent" (click)="openInput = !openInput; presPat(user.id)">Prescription</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="container-fluid" *ngIf="openInput">
+  
+  <div class="row">
+    <div class="col-md-4">{{selectedPatient[0].name}}</div>
+    <div class="col-md-4"><textarea placeholder="Prescription" [(ngModel)]="prescription" class="w-100"></textarea></div>
+    <div class="col-md-4"><button class="button" type="submit" (click)="savePrescription()">Store</button></div>
+  </div>
+  
+  
+</div>

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">Patient</div>
+    <div class="col-md-4">Role</div>
+    <div class="col-md-4">Prescription</div>
+  </div>
+  <div class="row" *ngFor="let user of usersList">
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          {{user.name }}
+        </span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          {{user.role }}
+        </span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mat-elevaltion-z5 h-100 w-100">
+        <span class="center">
+          {{user.prescription }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
